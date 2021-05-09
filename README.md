@@ -12,12 +12,17 @@ A phishing tool.
 
 # Latest and updated login pages
 
-Traditional Snapchat Login page.
+- Traditional Snapchat Login page.
+
+- Instagram; traditional login page, increase followers 1, increase followers 2.
+
+- Kik; login page, ragebot unbrik page, mediafire login page.
+
 (More pages will be added later)
 
-Mask URL support
+* Mask URL support
 
-Beginner Friendly
+* Beginner Friendly
 
 ## Multiple tunneling options ##
 
