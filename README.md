@@ -41,7 +41,7 @@ $ ./phisherx.sh
 
 On first install, it'll install all the dependencies after which you'll be able to use the tool.
 
-Dependencies
+## Dependencies ##
 
 Phisher-X requires the following packages to function;
 
