@@ -336,7 +336,7 @@ main_menu() {
 		site_sc
 	elif [[ "$REPLY" == 2 || "$REPLY" == 02 ]]; then
 		site_instagram
-	elif [[ "$REPLY" == 99]]; then
+	elif [[ "$REPLY" == 99 ]]; then
 		about
 	elif [[ "$REPLY" == 0 || "$REPLY" == 00 ]]; then
 		msg_exit
