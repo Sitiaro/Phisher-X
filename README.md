@@ -46,7 +46,11 @@ On first install, it'll install all the dependencies after which you'll be able 
 Phisher-X requires the following packages to function;
 
 php
+
 wget
+
 curl
+
 git
+
 (More pages will be added in the future.)
