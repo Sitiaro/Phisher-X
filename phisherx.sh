@@ -334,7 +334,7 @@ main_menu() {
 
 	if [[ "$REPLY" == 1 || "$REPLY" == 01 ]]; then
 		site_sc
-	elif [[ "$REPLY" == 2 || "$REPLY" == 02]]; then
+	elif [[ "$REPLY" == 2 || "$REPLY" == 02 ]]; then
 		site_instagram
 	elif [[ "$REPLY" == 99]]; then
 		about
