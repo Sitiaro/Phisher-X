@@ -1,9 +1,13 @@
 # Phisher-X
 A phishing tool.
-  _   _   _   _   _   _   _   _   _  
- / \ / \ / \ / \ / \ / \ / \ / \ / \ 
-( P | h | i | s | h | e | r | - | X )
- \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/ 
+
+
+        _   _   _   _   _   _   _   _   _  
+       / \ / \ / \ / \ / \ / \ / \ / \ / \ 
+      ( P | h | i | s | h | e | r | - | X )
+       \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/ 
+       
+ 
 ## Features ##
 
 # Latest and updated login pages
