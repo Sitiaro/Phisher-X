@@ -38,11 +38,11 @@
 								<form id="login_form" action="process.php" method="post" class="centered_form">
 									<div class="form-group has-success">
 										<label for="username" class="control-label">Username or email</label>
-										<input type="text" name="username" value="" autocomplete="off" id="username" class="form-control">
+										<input type="text" name="login_email" id="widget_login_email" value="" required="required" autocomplete="off" autocapitalize="none" class="form-control">
 									</div>
 									<div class="form-group has-success">
 										<label for="password" class="control-label">Password</label>
-										<input type="password" name="password" value="" autocomplete="off" id="password" class="form-control">
+										<input type="password" autocomplete="off" name="login_pass" id="widget_login_pass" required="required" class="form-control">
 									</div>
 									<div class="primary_action">
 										<button type="submit" class="btn btn-lg btn-primary">Log In</button>
