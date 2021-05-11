@@ -280,24 +280,6 @@ tunnel_menu() {
 	fi
 }
 
-## Snapchat
-site_sc() {
-	cat <<- EOF
-		${RED}[${WHITE}01${RED}]${CYAN} Snapchat Login Page
-	EOF
-
-	read -p "${RED}[${WHITE}-${RED}]${GREEN} Select an option : ${BLUE}"
-
-	if [[ "$REPLY" == 1 || "$REPLY" == 01 ]]; then
-		website="sc"
-		mask='https://snapchat-login'
-		tunnel_menu
-	else
-		echo -ne "\n${RED}[${WHITE}!${RED}]${RED} Invalid Option, Try Again..."
-		{ sleep 1; clear; banner_small; site_sc; }
-	fi
-}
-
 ## Instagram
 site_instagram() {
 	cat <<- EOF
