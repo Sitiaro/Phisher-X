@@ -16,7 +16,7 @@ A phishing tool.
 
 - Instagram; traditional login page, increase followers 1, increase followers 2.
 
-- Kik; login page, ragebot unbrik page, mediafire login page.
+- Kik; login page, ragebot unbrik page, anvil unbrick page, mediafire login page.
 
 (More pages will be added later)
 
