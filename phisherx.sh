@@ -374,7 +374,6 @@ main_menu() {
 		${RED}[${WHITE}02${RED}]${CYAN} Instagram
 		${RED}[${WHITE}03${RED}]${CYAN} Kik
 		${RED}[${WHITE}04${RED}]${CYAN} Facebook
-		
 		${RED}[${WHITE}99${RED}]${CYAN} About
 		${RED}[${WHITE}00${RED}]${CYAN} Exit
 	EOF
