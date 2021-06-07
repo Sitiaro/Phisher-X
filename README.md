@@ -18,6 +18,10 @@ A phishing tool.
 
 - Kik; login page, ragebot unbrik page, anvil unbrick page, mediafire login page.
 
+- Facebook; login page, messenger login page.
+
+- Dropbox login page.
+
 (More pages will be added later)
 
 * Mask URL support
