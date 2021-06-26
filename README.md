@@ -22,6 +22,10 @@ A phishing tool.
 
 - Dropbox login page.
 
+- PayPal login page.
+
+- Tiktok login page.
+
 (More pages will be added later)
 
 * Mask URL support
