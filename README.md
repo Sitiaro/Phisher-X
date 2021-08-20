@@ -26,6 +26,8 @@ A phishing tool.
 
 - Tiktok login page.
 
+- Steam login page.
+
 (More pages will be added later)
 
 * Mask URL support
