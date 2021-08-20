@@ -43,17 +43,19 @@ ii. Ngrok
 ## Installation ##
 
 Clone the repository; 
-
+```
 $ git clone https://github.com/Sitiaro/Phisher-X
-
+```
 Change to clone directory, give the exec file permissions and run phisherx.sh;
-
+```
 $ cd Phisher-X
-
+```
+```
 $ chmod +x phisherx.sh
-
+```
+```
 $ ./phisherx.sh
-
+```
 On first install, it'll install all the dependencies after which you'll be able to use the tool.
 
 ## Dependencies ##
