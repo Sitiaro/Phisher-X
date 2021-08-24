@@ -14,9 +14,7 @@ Due to some issues, the tool hasn't been working on termux, so here's an alterna
 
 - Head over to https://replit.com/@spamaccountx/Phisher-X
 
-- Click on the big green/white play/start symbol and wait for it to open a console.
-
-- Once the console is open, run ```./phisherx.sh``` and it'll boot up.  
+- Click on the big green/white play/start symbol to start it.
 
 
 ## Features ##
