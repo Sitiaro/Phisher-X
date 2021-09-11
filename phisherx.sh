@@ -136,11 +136,11 @@ install_ngrok() {
 		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Installing ngrok..."${WHITE}
 		arch=`uname -m`
 		if [[ ("$arch" == *'arm'*) || ("$arch" == *'Android'*) ]]; then
-			download_ngrok 'https://bin.equinox.io/a/mSS5dopPimQ/ngrok-2.3.39-linux-arm64.zip'
+			download_ngrok ''https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip'
 		elif [[ "$arch" == *'aarch64'* ]]; then
-			download_ngrok 'https://bin.equinox.io/a/mSS5dopPimQ/ngrok-2.3.39-linux-arm64.zip'
+			download_ngrok 'https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm64.zip'
 		elif [[ "$arch" == *'x86_64'* ]]; then
-			download_ngrok 'https://bin.equinox.io/a/mSS5dopPimQ/ngrok-2.3.39-linux-arm64.zip'
+			download_ngrok 'https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm64.zip'
 		else
 			download_ngrok 'https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip'
 		fi
