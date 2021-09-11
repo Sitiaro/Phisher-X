@@ -8,15 +8,6 @@ A phishing tool.
        \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/ 
        
 
-### Note ###
-
-Due to some issues, the tool hasn't been working on termux, so here's an alternative;
-
-- Head over to https://replit.com/@spamaccountx/Phisher-X
-
-- Click on the big green/white play/start symbol to start it.
-
-
 ## Features ##
 
 # Latest and updated login pages
