@@ -180,8 +180,8 @@ about() {
 }
 
 
-HOST='127.0.0.1'
-PORT='8080'
+HOST='0.0.0.0'
+PORT='80'
 
 setup_site() {
 	echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} Setting up server..."${WHITE}
