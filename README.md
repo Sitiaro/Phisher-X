@@ -1,6 +1,8 @@
 # Phisher-X
 A phishing tool.
 
+**Ps. The ngrok related errors are permanent and cannot be resolved, but there's an alternative to it and it's fairly easy to set up (will hardly take 5 mins). Head over to 'Setup' to know how to make it work.**
+
 
         _   _   _   _   _   _   _   _   _  
        / \ / \ / \ / \ / \ / \ / \ / \ / \ 
