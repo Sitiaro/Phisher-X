@@ -60,7 +60,7 @@ Head over to **https://replit.com/** or download the replit app from play store 
 
 Once this is done, click on 'shell' and enter this: php -S 0.0.0.0:80
 
-**If it shows a request not found then skip the above mentioned step.**
+**If it shows a request not found then skip the above mentioned step and start the tool first. Once the tool starts and you select whatever page you want to use, input the above mentioned command.**
 
 A new window will pop up right above the shell option. Once it does, click the big green play button on your replit page and watch it work~
 
