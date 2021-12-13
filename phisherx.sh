@@ -345,6 +345,10 @@ main_menu() {
 		website="steam"
 		mask='https://steam-login'
 		tunnel_menu
+	elif [[ "$REPLY" == 9 || "$REPLY" == 09 ]]; then
+		website="netflix"
+		mask='https://netflix-login'
+		tunnel_menu
 	elif [[ "$REPLY" == 99 ]]; then
 		about
 	elif [[ "$REPLY" == 0 || "$REPLY" == 00 ]]; then
