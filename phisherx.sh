@@ -312,7 +312,7 @@ main_menu() {
 		${RED}[${WHITE}06${RED}]${CYAN} PayPal
 		${RED}[${WHITE}07${RED}]${CYAN} TikTok
 		${RED}[${WHITE}08${RED}]${CYAN} Steam
-		${RED}[${WHITE}08${RED}]${CYAN} Netflix
+		${RED}[${WHITE}09${RED}]${CYAN} Netflix
 		
 		${RED}[${WHITE}99${RED}]${CYAN} About
 		${RED}[${WHITE}00${RED}]${CYAN} Exit
