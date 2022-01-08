@@ -58,7 +58,12 @@ On first install, it'll install all the dependencies after which you'll be able 
 
 Head over to **https://replit.com/** or download the replit app from play store and sign up for an account, or sign up with google (preferred). After you finish setting the account up, click on the 3 bars on top right corner and select 'create repl'. On the setup box, click on 'import from Github' (on top right corner of the box), and paste the url of this repository **https://www.github.com/Sitiaro/Phisher-X** in the box, and click import. Once it finishes importing, it'll ask you to enter the language and configure the run button. Leave the language part alone and set 'configure the run button' to bash phisherx.sh
 
-Once this is done, click on 'shell' and enter this: php -S 0.0.0.0:80
+Once this is done, click on 'shell' and enter this: **php -S 0.0.0.0:80**
+
+**If you get a 'No such files or directory exist', then run this command on the shell in place of the one mentioned above:-**
+
+**php -S localhost:80 -t .server**
+
 
 **If it shows a request not found then skip the above mentioned step and start the tool first. Once the tool starts and you select whatever page you want to use, input the above mentioned command.**
 
