@@ -1,3 +1,4 @@
+## Credits to tr-tech (https://github.com/htr-tech/zphisher/)
 ##ANSI colors
 RED="$(printf '\033[31m')"
 GREEN="$(printf '\033[32m')"
