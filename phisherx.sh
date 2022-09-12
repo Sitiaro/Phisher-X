@@ -119,7 +119,7 @@ about() {
 	cat <<- EOF
 		${GREEN}Author   ${RED}:  ${CYAN}Sitiaro
 		${GREEN}Github   ${RED}:  ${CYAN}https://github.com/Sitiaro
-		${GREEN}Social   ${RED}:  ${CYAN}𝙰𝚒 爱 ❧#1085 (Discord)
+		${GREEN}Social   ${RED}:  
 		${GREEN}Version  ${RED}:  ${CYAN}2.0
 		${RED}[${WHITE}00${RED}]${ORANGE} Main Menu
 	EOF
