@@ -1,7 +1,7 @@
 # Phisher-X
 A phishing tool.
 
-**ngrok related errors are permanent and cannot be resolved but there's an alternative to it and it's fairly easy to set up. Head over to the 'Setup' section to know more about it.**
+**ngrok related errors are permanent and cannot be resolved but there are alternative to it. Head over to the 'Setup' section to know more about them.**
 
 
         _   _   _   _   _   _   _   _   _  
@@ -42,7 +42,7 @@ A phishing tool.
 
 * Easy to setup
 
-## Installation (read 'Setup' instead) ##
+## Installation ##
 
 Clone the repository; 
 ```
@@ -62,6 +62,8 @@ On first install, it'll install all the dependencies after which you'll be able 
 
 ## Setup ##
 
+## 1. Replit ##
+
 Head over to **https://replit.com/** or download the replit app from play store and sign up for an account, or sign up with google (preferred). After you finish setting the account up, click on the 3 bars on top right corner and select 'create repl'. On the setup box, click on 'import from Github' (on top right corner of the box), and paste the url of this repository **https://www.github.com/Sitiaro/Phisher-X** in the box, and click import. Once it finishes importing, it'll ask you to enter the language and configure the run button. Leave the language part alone and set 'configure the run button' to bash phisherx.sh
 
 Once this is done, click on 'shell' and enter this: **php -S 0.0.0.0:80**
@@ -75,7 +77,15 @@ Once this is done, click on 'shell' and enter this: **php -S 0.0.0.0:80**
 
 A new window will pop up right above the shell option. Once it does, click the big green play button on your replit page and watch it work~
 
-**Ps. You can close the script using ctrl+c and run it again using the play button without having to do the shell steps again. However, the page won't work if your replit gets disconnected so keep checking 'shell' every so often, and make sure to check the replit tab because it goes to sleep every now and then.**
+**You can close the script using ctrl+c and run it again using the play button without having to do the shell steps again. However, the page won't work if your replit gets disconnected so keep checking 'shell' every so often, and make sure to check the replit tab because it goes to sleep every now and then.**
+
+
+## 2. Termux ##
+
+For this you need to download termux on your Android device. Click [here](https://f-droid.org/repo/com.termux_118.apk) to download the latest version of termux. Once the download finishes, follow the steps mentioned under the **Installation** section.
+
+**Cloudflared faces some issues every so often so check the link being generated on yourself before sending it to the victim.**
+
 
 ## Dependencies ##
 
@@ -90,4 +100,4 @@ curl
 git
 
 
-More phishing pages TBA
+**More phishing pages TBA**
