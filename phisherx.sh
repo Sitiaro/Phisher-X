@@ -281,7 +281,7 @@ tunnel_menu() {
 	{ clear; banner_small; }
 	cat <<- EOF
 		${RED}[${WHITE}01${RED}]${CYAN} Localhost ${RED}[${CYAN}For Devs${RED}]
-		${RED}[${WHITE}01${RED}]${CYAN} Cloudflared ${RED}[${CYAN}New${RED}]
+		${RED}[${WHITE}02${RED}]${CYAN} Cloudflared ${RED}[${CYAN}New${RED}]
 	EOF
 
 	read -p "${RED}[${WHITE}-${RED}]${GREEN} Select a port forwarding service : ${BLUE}"
