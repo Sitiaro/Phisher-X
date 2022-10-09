@@ -1,7 +1,7 @@
 # Phisher-X
 A phishing tool.
 
-**Ps. The ngrok related errors are permanent and cannot be resolved, but there's an alternative to it and it's fairly easy to set up (will hardly take 5 mins). Head over to 'Setup' to know how to make it work.**
+**Ps. ngrok related errors are permanent and cannot be resolved but there's an alternative to it and it's fairly easy to set up (will hardly take 5 mins). Head over to 'Setup' to know how it works.**
 
 
         _   _   _   _   _   _   _   _   _  
@@ -16,6 +16,8 @@ A phishing tool.
 
 - Traditional Snapchat Login page.
 
+- Gmail login page
+
 - Instagram; traditional login page, increase followers 1, increase followers 2.
 
 - Kik; login page, ragebot unbrik page, anvil unbrick page, mediafire login page.
@@ -29,6 +31,8 @@ A phishing tool.
 - Tiktok login page.
 
 - Steam login page.
+
+- Linkdin login page.
 
 (More pages will be added later)
 
@@ -83,4 +87,5 @@ curl
 
 git
 
-(More pages will be added in the future.)
+
+More phishing pages TBA
