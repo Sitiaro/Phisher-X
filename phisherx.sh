@@ -64,7 +64,7 @@ banner() {
 		${RED} / \ / \ / \ / \ / \ / \ / \ / \ / \ 
 		${RED}( P | h | i | s | h | e | r | - | X )
 		${RED} \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/ 
-		${GREEN}				    Version: 1.0
+		${GREEN}				    Version: 1.1
 		${GREEN}[${WHITE}-${GREEN}]${CYAN} Tool Created by Sitiaro${WHITE}
 	EOF
 }
@@ -76,7 +76,7 @@ banner_small() {
 		${RED} / \ / \ / \ / \ / \ / \ / \ / \ / \ 
 		${RED}( P | h | i | s | h | e | r | - | X )
 		${RED} \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/ 
-		${GREEN}				    Version: 1.0
+		${GREEN}				    Version: 1.1
 	EOF
 }
 
@@ -178,7 +178,7 @@ about() {
 		${GREEN}Author   ${RED}:  ${CYAN}Sitiaro
 		${GREEN}Github   ${RED}:  ${CYAN}https://github.com/Sitiaro
 		${GREEN}Social   ${RED}:  
-		${GREEN}Version  ${RED}:  ${CYAN}1.0
+		${GREEN}Version  ${RED}:  ${CYAN}1.1
 		${RED}[${WHITE}00${RED}]${ORANGE} Main Menu
 	EOF
 
