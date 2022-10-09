@@ -80,7 +80,7 @@ A new window will pop up right above the shell option. Once it does, click the b
 **You can close the script using ctrl+c and run it again using the play button without having to do the shell steps again. However, the page won't work if your replit gets disconnected so keep checking 'shell' every so often, and make sure to check the replit tab because it goes to sleep every now and then.**
 
 
-## 2. Termux##
+## 2. Termux ##
 
 For this you need to download termux on your Android device. Click [here](https://f-droid.org/repo/com.termux_118.apk) to download the latest version of termux. Once the download finishes, follow the steps mentioned under the **Installation** section.
 
